@@ -9,7 +9,7 @@ body {
 	line-height: 1.6;
 	color: #333333;
 	overflow-x: hidden;
-	font-family: "Open Sans", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 .main-wrapper {
 	min-height: 100%;
@@ -50,7 +50,7 @@ ul.list > li {
 }
 .content ul > li:after,
 ul.list > li:after {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	width: 5px;
@@ -99,19 +99,19 @@ ol.list > li {
 }
 .content ol > li:before,
 ol.list > li:before {
-	content: counters(item, ".") ". ";
+	content: counters(item, '.') '. ';
 	counter-increment: item;
 }
 .content ol ol li:before,
 ol.list ol li:before {
-	content: counters(item, ".") " ";
+	content: counters(item, '.') ' ';
 }
 h1,
 .title-h1 {
 	font-size: 36px;
 	line-height: 1.1;
 	margin-bottom: 20px;
-	font-family: "Helios";
+	font-family: 'Helios';
 	font-weight: bold;
 }
 h2,
@@ -119,7 +119,7 @@ h2,
 	font-size: 28px;
 	line-height: 1.1;
 	margin-bottom: 20px;
-	font-family: "Helios";
+	font-family: 'Helios';
 	font-weight: bold;
 }
 h3,
@@ -127,14 +127,14 @@ h3,
 	font-size: 21px;
 	line-height: 1.1;
 	margin-bottom: 15px;
-	font-family: "Helios";
+	font-family: 'Helios';
 	font-weight: bold;
 }
 h4 {
 	font-size: 18px;
 	line-height: 1.1;
 	margin-bottom: 7px;
-	font-family: "Helios";
+	font-family: 'Helios';
 	font-weight: bold;
 }
 @media only screen and (max-width: 767px) {
@@ -226,7 +226,7 @@ a.absolute {
 	transition: all 200ms ease-out;
 	border: none;
 	font-weight: bold;
-	font-family: "Helios";
+	font-family: 'Helios';
 	letter-spacing: 0.5px;
 }
 .button:hover {
@@ -317,7 +317,7 @@ a.absolute {
 	transform: rotate(45deg);
 }
 .close:before {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	width: 2px;
@@ -328,7 +328,7 @@ a.absolute {
 	background: #f02a29;
 }
 .close:after {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -356,7 +356,7 @@ a.absolute {
 .header-panel {
 	background: #21282e;
 	color: #fff;
-	font-family: "Helios";
+	font-family: 'Helios';
 	height: 36px;
 	line-height: 36px;
 	font-size: 15px;
@@ -397,6 +397,7 @@ a.absolute {
 }
 .mob-menu-btn {
 	margin: 24px 5px 0 20px;
+	cursor: pointer;
 }
 .mob-menu-btn span {
 	display: block;
@@ -448,7 +449,11 @@ a.absolute {
 	color: #fff;
 	padding: 10px 20px;
 	text-transform: uppercase;
-	font-family: "Helios";
+	font-family: 'Helios';
+}
+.mobile-menu > ul > li > a:hover {
+	transition: 0.3s;
+	color: #2fab6d;
 }
 .mobile-menu > ul > li.active > a {
 	color: #2fab6d;
@@ -456,6 +461,7 @@ a.absolute {
 .mobile-menu-close.close {
 	top: 25px;
 	right: 25px;
+	cursor: pointer;
 }
 .callback-btn {
 	padding: 0 30px;
@@ -466,7 +472,7 @@ a.absolute {
 	text-decoration: none;
 	background: #e9bb26;
 	float: right;
-	font-family: "Helios";
+	font-family: 'Helios';
 	font-size: 18px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -524,7 +530,7 @@ a.absolute {
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-	content: "";
+	content: '';
 	top: 0;
 	left: 0;
 	padding: 0;
@@ -547,10 +553,12 @@ a.absolute {
 	}
 	40% {
 		opacity: 0.5;
-		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
+			0 0 0 10px rgba(255, 255, 255, 0.3);
 	}
 	90% {
-		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
+			0 0 0 10px rgba(255, 255, 255, 0.3);
 		-webkit-transform: scale(1.5);
 		opacity: 0;
 	}
@@ -561,10 +569,12 @@ a.absolute {
 	}
 	40% {
 		opacity: 0.5;
-		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
+			0 0 0 10px rgba(255, 255, 255, 0.3);
 	}
 	100% {
-		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
+			0 0 0 10px rgba(255, 255, 255, 0.3);
 		-moz-transform: scale(1.5);
 		opacity: 0;
 	}
@@ -575,16 +585,18 @@ a.absolute {
 	}
 	40% {
 		opacity: 0.5;
-		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
+			0 0 0 10px rgba(255, 255, 255, 0.3);
 	}
 	100% {
-		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26, 0 0 0 10px rgba(255, 255, 255, 0.3);
+		box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #e9bb26,
+			0 0 0 10px rgba(255, 255, 255, 0.3);
 		transform: scale(1.5);
 		opacity: 0;
 	}
 }
 .icons .element .title {
-	font-family: "Helios";
+	font-family: 'Helios';
 	font-weight: bold;
 	color: #2e3841;
 	font-size: 16px;
@@ -599,7 +611,7 @@ a.absolute {
 	background: #22282e;
 }
 .gray-bg {
-	background: url("../images/az-subtle.png") #f6f6f7;
+	background: url('../images/az-subtle.png') #f6f6f7;
 }
 .hr-min {
 	width: 100px;
@@ -609,7 +621,7 @@ a.absolute {
 	font-weight: 300;
 }
 .section2:before {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	bottom: -12px;
@@ -637,7 +649,7 @@ a.absolute {
 	background-attachment: scroll;
 }
 .num-section:after {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -778,7 +790,7 @@ hr.white {
 	.top-menu {
 		padding-top: 22px;
 		float: right;
-		font-family: "Helios";
+		font-family: 'Helios';
 		margin-right: 20px;
 	}
 	.top-menu > ul > li {
@@ -858,7 +870,7 @@ hr.white {
 	position: relative;
 }
 .top-slider .item:before {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -985,7 +997,7 @@ video#video_background {
 	cursor: pointer;
 	padding: 17px 15px 17px 70px;
 	text-transform: uppercase;
-	font-family: "Helios";
+	font-family: 'Helios';
 	font-weight: bold;
 	font-size: 13px;
 	letter-spacing: 0.5px;
@@ -1001,8 +1013,8 @@ video#video_background {
 	color: #fff !important;
 }
 .accordeon .element .title:before {
-	font-family: "FontAwesome";
-	content: "";
+	font-family: 'FontAwesome';
+	content: '';
 	display: block;
 	position: absolute;
 	width: 50px;
@@ -1054,7 +1066,7 @@ video#video_background {
 }
 @media only screen and (min-width: 768px) {
 	.steps-section .inner:before {
-		content: "";
+		content: '';
 		display: block;
 		position: absolute;
 		width: 70%;
@@ -1108,7 +1120,7 @@ video#video_background {
 	padding: 15px 15px 0;
 }
 .services-section .element .img-wrapper:after {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -1126,7 +1138,7 @@ video#video_background {
 	opacity: 1;
 }
 .services-section .element .img-wrapper:before {
-	content: "Оформить заявку";
+	content: 'Оформить заявку';
 	display: block;
 	position: absolute;
 	width: 200px;
@@ -1172,7 +1184,7 @@ video#video_background {
 	height: 40px;
 }
 .services-elements .title-h5:after {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	width: 16px;
