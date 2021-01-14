@@ -38,7 +38,18 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/toggleMenu */ \"./src/modules/toggleMenu.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slider */ \"./src/modules/slider.js\");\n\n\n\n\n\n //Modal window\n\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__.default)(); //Mobile menu\n\n(0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__.default)(); //Smooth scroll to section and scroll top btn\n\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__.default)(); //Main slider\n\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://ElectricalWork/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/toggleMenu */ \"./src/modules/toggleMenu.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slider */ \"./src/modules/slider.js\");\n/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/carousel */ \"./src/modules/carousel.js\");\n\n\n\n\n\n\n //Modal window\n\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__.default)(); //Mobile menu\n\n(0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__.default)(); //Smooth scroll to section and scroll top btn\n\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__.default)(); //Main slider\n\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_3__.default)(); //Slider-carousel\n\n(0,_modules_carousel__WEBPACK_IMPORTED_MODULE_4__.default)();\n\n//# sourceURL=webpack://ElectricalWork/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/carousel.js":
+/*!*********************************!*\
+  !*** ./src/modules/carousel.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar carousel = function carousel() {\n  var carouselWrapper = document.querySelector('.services-elements'),\n      carousel = carouselWrapper.querySelector('.services-carousel'),\n      slide = carousel.querySelectorAll('.carousel-item'),\n      arrows = document.querySelector('.services-arrow');\n  var slidesShow = 3,\n      slideWidth = 100 / slidesShow,\n      position = 0;\n\n  var prevSlider = function prevSlider() {\n    if (position <= 0) {\n      position = slide.length - slidesShow;\n    }\n\n    if (position > 0) {\n      --position;\n      carousel.style.transform = \"translateX(-\".concat(position * slideWidth, \"%)\");\n    }\n  };\n\n  var nextSlider = function nextSlider() {\n    if (position < slide.length - slidesShow) {\n      ++position;\n\n      if (position >= slide.length - slidesShow) {\n        position = 0;\n      }\n\n      carousel.style.transform = \"translateX(-\".concat(slideWidth * position, \"%)\");\n    }\n  };\n\n  arrows.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.matches('.arrow-left')) {\n      prevSlider();\n    }\n\n    if (target.matches('.arrow-right')) {\n      nextSlider();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (carousel);\n\n//# sourceURL=webpack://ElectricalWork/./src/modules/carousel.js?");
 
 /***/ }),
 
@@ -477,7 +488,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "6d77bab0744b7d65f8d4"
+/******/ 		__webpack_require__.h = () => "b0299fa2b3fa5f0ae28c"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

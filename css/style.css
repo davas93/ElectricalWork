@@ -1237,6 +1237,18 @@ video#video_background {
 	font-weight: bold;
 	color: #2fab6d;
 }
+.services-elements {
+	overflow: hidden;
+}
+.services-carousel {
+	display: flex;
+	transition: transform 0.5s;
+	will-change: transform;
+}
+.carousel-item {
+	flex: 0 0 33.3333%;
+	margin: auto 0;
+}
 
 .up {
 	display: none;
@@ -1252,6 +1264,18 @@ video#video_background {
 	background-color: rgba(0, 0, 0, 0.6);
 }
 
+@media only screen and (max-width: 992px) {
+	.carousel-item {
+		flex: 0 0 50%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.carousel-item {
+		flex: 0 0 100%;
+	}
+}
+
 @media only screen and (min-width: 992px) {
 	.services-elements > .row > hr:nth-of-type(2n) {
 		clear: none;
@@ -1260,4 +1284,5 @@ video#video_background {
 		clear: both;
 	}
 }
+
 /**** /. services section *****/

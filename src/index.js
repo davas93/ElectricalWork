@@ -4,6 +4,7 @@ import modal from './modules/modal';
 import toggleMenu from './modules/toggleMenu';
 import smoothScroll from './modules/smoothScroll';
 import slider from './modules/slider';
+import carousel from './modules/carousel';
 
 //Modal window
 modal();
@@ -16,3 +17,6 @@ smoothScroll();
 
 //Main slider
 slider();
+
+//Slider-carousel
+carousel();
