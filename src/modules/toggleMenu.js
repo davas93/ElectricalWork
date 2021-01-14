@@ -12,7 +12,7 @@ const toggleMenu = () => {
 			target.matches('.mobile-menu-close') ||
 			target.matches('.overlay') ||
 			target.matches('.callback-btn') ||
-			target.closest('.mobile-menu>ul>li>a')
+			target.matches('.mobile-menu>ul>li>a')
 		) {
 			menu.classList.remove('open');
 		}

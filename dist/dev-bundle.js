@@ -71,7 +71,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar toggleMenu = function toggleMenu() {\n  var menu = document.querySelector('.mobile-menu');\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.mob-menu-btn')) {\n      menu.classList.add('open');\n    }\n\n    if (target.matches('.mobile-menu-close') || target.matches('.overlay') || target.matches('.callback-btn') || target.closest('.mobile-menu>ul>li>a')) {\n      menu.classList.remove('open');\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggleMenu);\n\n//# sourceURL=webpack://ElectricalWork/./src/modules/toggleMenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar toggleMenu = function toggleMenu() {\n  var menu = document.querySelector('.mobile-menu');\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.closest('.mob-menu-btn')) {\n      menu.classList.add('open');\n    }\n\n    if (target.matches('.mobile-menu-close') || target.matches('.overlay') || target.matches('.callback-btn') || target.matches('.mobile-menu>ul>li>a')) {\n      menu.classList.remove('open');\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (toggleMenu);\n\n//# sourceURL=webpack://ElectricalWork/./src/modules/toggleMenu.js?");
 
 /***/ }),
 
@@ -466,7 +466,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "3f8014239f9920b54d7f"
+/******/ 		__webpack_require__.h = () => "ac86075a195ea65caffc"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
