@@ -853,21 +853,33 @@ hr.white {
 .top-slider .slick-dots {
 	position: absolute;
 	bottom: 25px;
+	z-index: 100;
 }
 .top-slider .slick-dots li {
 	border-color: #fff !important;
+	transition: 0.2s;
+	cursor: pointer;
+}
+.top-slider .slick-dots li:hover {
+	transform: scale(1.2);
 }
 .top-slider .slick-dots li.slick-active {
 	background-color: #fff !important;
 }
 .top-slider {
+	position: relative;
 	overflow: hidden;
 	height: 450px;
 }
 .top-slider .item {
+	opacity: 0;
 	overflow: hidden;
 	height: 450px;
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 .top-slider .item:before {
 	content: '';
@@ -878,6 +890,9 @@ hr.white {
 	top: 0;
 	left: 0;
 	background: rgba(0, 0, 0, 0.5);
+}
+.top-slider .item-active {
+	opacity: 1;
 }
 .top-slider .table {
 	position: relative;
@@ -955,7 +970,7 @@ video#video_background {
 		transition: 0.5s;
 	}
 	.top-slider .table.active {
-		webkit-transform: scale(1);
+		-webkit-transform: scale(1);
 		-ms-transform: scale(1);
 		-o-transform: scale(1);
 		transform: scale(1);

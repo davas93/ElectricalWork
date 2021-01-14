@@ -38,7 +38,7 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/toggleMenu */ \"./src/modules/toggleMenu.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n\n\n\n\n //Modal window\n\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__.default)(); //Mobile menu\n\n(0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__.default)(); //Smooth scroll to section and scroll top btn\n\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__.default)();\n\n//# sourceURL=webpack://ElectricalWork/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/toggleMenu */ \"./src/modules/toggleMenu.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slider */ \"./src/modules/slider.js\");\n\n\n\n\n\n //Modal window\n\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__.default)(); //Mobile menu\n\n(0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__.default)(); //Smooth scroll to section and scroll top btn\n\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__.default)(); //Main slider\n\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://ElectricalWork/./src/index.js?");
 
 /***/ }),
 
@@ -50,6 +50,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar modal = function modal() {\n  var modalCallback = document.getElementById('callback'),\n      modalOverlay = document.querySelector('.modal-overlay');\n\n  var openModal = function openModal() {\n    modalCallback.style.display = 'block';\n    modalCallback.classList.add('animate__animated', 'animate__fadeIn');\n    modalOverlay.style.display = 'block';\n  };\n\n  var closeModal = function closeModal() {\n    modalCallback.style.display = '';\n    modalOverlay.style.display = '';\n  };\n\n  document.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.matches('.fancyboxModal')) {\n      openModal();\n    }\n\n    if (target.closest('.modal-close') || target.matches('.modal-overlay')) {\n      closeModal();\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\n\n//# sourceURL=webpack://ElectricalWork/./src/modules/modal.js?");
+
+/***/ }),
+
+/***/ "./src/modules/slider.js":
+/*!*******************************!*\
+  !*** ./src/modules/slider.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar slider = function slider() {\n  var topSlider = document.querySelector('.top-slider'),\n      slide = topSlider.querySelectorAll('.item'),\n      table = topSlider.querySelectorAll('.table');\n  topSlider.insertAdjacentHTML('beforeend', '<ul class=\"slick-dots\"></ul>');\n  var dots = topSlider.querySelector('.slick-dots');\n\n  for (var i = 0; i < slide.length; i++) {\n    var newDot = document.createElement('li');\n    dots.append(newDot);\n    dots.firstElementChild.classList.add('slick-active');\n  }\n\n  var dot = dots.querySelectorAll('li');\n  var currentSlide = 0,\n      interval;\n\n  var prevSlide = function prevSlide(elem, index, strClass) {\n    elem[index].classList.remove(strClass);\n  };\n\n  var nextSlide = function nextSlide(elem, index, strClass) {\n    elem[index].classList.add(strClass);\n  };\n\n  var autoPlaySlide = function autoPlaySlide() {\n    prevSlide(table, currentSlide, 'active');\n    prevSlide(dot, currentSlide, 'slick-active');\n    prevSlide(slide, currentSlide, 'item-active');\n    currentSlide++;\n\n    if (currentSlide >= slide.length) {\n      currentSlide = 0;\n    }\n\n    nextSlide(table, currentSlide, 'active');\n    nextSlide(dot, currentSlide, 'slick-active');\n    nextSlide(slide, currentSlide, 'item-active');\n  };\n\n  var startSlide = function startSlide() {\n    var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3000;\n    interval = setInterval(autoPlaySlide, time);\n  };\n\n  var stopSlide = function stopSlide() {\n    clearInterval(interval);\n  };\n\n  topSlider.addEventListener('click', function (event) {\n    event.preventDefault();\n    var target = event.target;\n\n    if (!target.matches('.slick-dots>li')) {\n      return;\n    }\n\n    prevSlide(table, currentSlide, 'active');\n    prevSlide(slide, currentSlide, 'item-active');\n    prevSlide(dot, currentSlide, 'slick-active');\n\n    if (target.matches('.slick-dots>li')) {\n      dot.forEach(function (elem, index) {\n        if (elem === target) {\n          currentSlide = index;\n        }\n      });\n    }\n\n    if (currentSlide >= slide.length) {\n      currentSlide = 0;\n    }\n\n    if (currentSlide < 0) {\n      currentSlide = slide.length - 1;\n    }\n\n    nextSlide(table, currentSlide, 'active');\n    nextSlide(slide, currentSlide, 'item-active');\n    nextSlide(dot, currentSlide, 'slick-active');\n  });\n  topSlider.addEventListener('mouseover', function (event) {\n    if (event.target.matches('.slick-dots>li')) {\n      stopSlide();\n    }\n  });\n  topSlider.addEventListener('mouseout', function (event) {\n    if (event.target.matches('.slick-dots>li')) {\n      startSlide();\n    }\n  });\n  startSlide();\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);\n\n//# sourceURL=webpack://ElectricalWork/./src/modules/slider.js?");
 
 /***/ }),
 
@@ -466,7 +477,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "ac86075a195ea65caffc"
+/******/ 		__webpack_require__.h = () => "6d77bab0744b7d65f8d4"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
