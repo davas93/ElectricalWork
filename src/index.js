@@ -5,6 +5,7 @@ import toggleMenu from './modules/toggleMenu';
 import smoothScroll from './modules/smoothScroll';
 import slider from './modules/slider';
 import carousel from './modules/carousel';
+import accordion from './modules/accordion';
 
 //Modal window
 modal();
@@ -20,3 +21,6 @@ slider();
 
 //Slider-carousel
 carousel();
+
+//FAQ block
+accordion();

@@ -38,7 +38,18 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/toggleMenu */ \"./src/modules/toggleMenu.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slider */ \"./src/modules/slider.js\");\n/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/carousel */ \"./src/modules/carousel.js\");\n\n\n\n\n\n\n //Modal window\n\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__.default)(); //Mobile menu\n\n(0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__.default)(); //Smooth scroll to section and scroll top btn\n\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__.default)(); //Main slider\n\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_3__.default)(); //Slider-carousel\n\n(0,_modules_carousel__WEBPACK_IMPORTED_MODULE_4__.default)();\n\n//# sourceURL=webpack://ElectricalWork/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./src/modules/modal.js\");\n/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/toggleMenu */ \"./src/modules/toggleMenu.js\");\n/* harmony import */ var _modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/smoothScroll */ \"./src/modules/smoothScroll.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slider */ \"./src/modules/slider.js\");\n/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/carousel */ \"./src/modules/carousel.js\");\n/* harmony import */ var _modules_accordion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/accordion */ \"./src/modules/accordion.js\");\n\n\n\n\n\n\n\n //Modal window\n\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__.default)(); //Mobile menu\n\n(0,_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__.default)(); //Smooth scroll to section and scroll top btn\n\n(0,_modules_smoothScroll__WEBPACK_IMPORTED_MODULE_2__.default)(); //Main slider\n\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_3__.default)(); //Slider-carousel\n\n(0,_modules_carousel__WEBPACK_IMPORTED_MODULE_4__.default)(); //FAQ block\n\n(0,_modules_accordion__WEBPACK_IMPORTED_MODULE_5__.default)();\n\n//# sourceURL=webpack://ElectricalWork/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/accordion.js":
+/*!**********************************!*\
+  !*** ./src/modules/accordion.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\nvar accordion = function accordion() {\n  var accordion = document.querySelector('.accordeon');\n  accordion.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.matches('.element>.title')) {\n      var parent = target.parentNode,\n          content = parent.querySelector('.element-content');\n\n      if (parent.classList.contains('active') && content.classList.contains('active')) {\n        parent.classList.remove('active');\n        content.classList.remove('active');\n      } else {\n        document.querySelectorAll('.element').forEach(function (child) {\n          child.classList.remove('active');\n        });\n        document.querySelectorAll('.element-content').forEach(function (child) {\n          child.classList.remove('active');\n        });\n        parent.classList.toggle('active');\n        content.classList.toggle('active');\n      }\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordion);\n\n//# sourceURL=webpack://ElectricalWork/./src/modules/accordion.js?");
 
 /***/ }),
 
@@ -488,7 +499,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "a3c775d26a3b829c6106"
+/******/ 		__webpack_require__.h = () => "650f7d26db46934e07bb"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
