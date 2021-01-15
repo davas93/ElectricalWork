@@ -6,6 +6,7 @@ import smoothScroll from './modules/smoothScroll';
 import slider from './modules/slider';
 import carousel from './modules/carousel';
 import accordion from './modules/accordion';
+import sendForm from './modules/sendForm';
 
 //Modal window
 modal();
@@ -24,3 +25,6 @@ carousel();
 
 //FAQ block
 accordion();
+
+//Form submission and input validation
+sendForm();

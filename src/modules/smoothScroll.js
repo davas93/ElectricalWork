@@ -1,29 +1,27 @@
 const smoothScroll = () => {
-	document.addEventListener('click', (event) => {
-		event.preventDefault();
-		let target = event.target;
+	const links = document.querySelectorAll('.section-link'),
+		btnUp = document.querySelector('.up');
 
-		if (
-			target.matches('.mobile-menu>ul>li>a') ||
-			target.matches('.top-menu>ul>li>a')
-		) {
-			let blockID = target.getAttribute('href');
+	links.forEach((item) => {
+		item.addEventListener('click', (event) => {
+			event.preventDefault();
 
+			let blockID = item.getAttribute('href');
 			document.querySelector(blockID).scrollIntoView({
 				behavior: 'smooth',
 				block: 'start',
 			});
-		}
-
-		if (target.matches('.up')) {
-			window.scrollTo({
-				behavior: 'smooth',
-				top: 0,
-			});
-		}
+		});
 	});
 
-	const btnUp = document.querySelector('.up');
+	btnUp.addEventListener('click', (event) => {
+		event.preventDefault();
+
+		window.scrollTo({
+			behavior: 'smooth',
+			top: 0,
+		});
+	});
 
 	document.addEventListener('scroll', () => {
 		if (window.scrollY >= document.getElementById('services').offsetTop) {

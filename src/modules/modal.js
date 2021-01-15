@@ -1,6 +1,8 @@
 const modal = () => {
 	const modalCallback = document.getElementById('callback'),
-		modalOverlay = document.querySelector('.modal-overlay');
+		modalOverlay = document.querySelector('.modal-overlay'),
+		link = document.querySelectorAll('.fancyboxModal'),
+		closeBtn = modalCallback.querySelector('.modal-close');
 
 	const openModal = () => {
 		modalCallback.style.display = 'block';
@@ -13,19 +15,20 @@ const modal = () => {
 		modalOverlay.style.display = '';
 	};
 
-	document.addEventListener('click', (event) => {
-		let target = event.target;
+	link.forEach((item) => {
+		item.addEventListener('click', (event) => {
+			event.preventDefault();
 
-		if (target.matches('.fancyboxModal')) {
 			openModal();
-		}
+		});
+	});
 
-		if (
-			target.closest('.modal-close') ||
-			target.matches('.modal-overlay')
-		) {
-			closeModal();
-		}
+	closeBtn.addEventListener('click', () => {
+		closeModal();
+	});
+
+	modalOverlay.addEventListener('click', () => {
+		closeModal();
 	});
 };
 
