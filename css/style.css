@@ -255,10 +255,11 @@ a.absolute {
 	position: relative;
 }
 .err {
-	position: absolute;
+	display: block;
 	left: 0;
 	bottom: -17px;
 	color: rgb(211, 27, 27);
+	transform: translateY(-15px);
 
 	font-size: 10px;
 }
@@ -299,7 +300,7 @@ a.absolute {
 	max-width: 100%;
 	background: #fff;
 	padding: 55px 25px 35px;
-	z-index: 99;
+	z-index: 500;
 }
 #responseMessage .modal-content.error {
 	color: #2fab6d;
