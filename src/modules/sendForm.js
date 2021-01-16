@@ -2,6 +2,33 @@ const sendForm = () => {
 	const form = document.querySelector('form[name = "form-callback"]'),
 		input = form.querySelectorAll('input[type="text"]');
 
+	const statusMessage = document.createElement('div');
+
+	const loadMessage = `<div id="preloader">
+	<div class="loader"></div>
+	<div class="message">Пожалуйста, подождите, идет отправка данных...</div>
+</div>`;
+	const successMessage = `<div id="preloader">
+					<img
+						class="success-icon animate__animated animate__bounceIn"
+						src="images/success.svg"
+						alt="success"
+					/>
+					<div class="message">
+						Данные получены, мы свяжемся с Вами в ближайшее время ;)
+					</div>
+				</div>`;
+	const errorMessage = `<div class="error" id="preloader">
+					<img
+						class="error-icon animate__animated animate__bounceIn"
+						src="images/error.svg"
+						alt="error"
+					/>
+					<div class="message">
+						Произошла ошибка, сeрвер не отвечает :( Попробуйте позже
+					</div>
+				</div>`;
+
 	const generateError = (text) => {
 		const error = document.createElement('span');
 		error.classList.add('err');
@@ -90,6 +117,9 @@ const sendForm = () => {
 		clearErrors();
 
 		if (checkCorrectData()) {
+			form.parentNode.appendChild(statusMessage);
+			statusMessage.innerHTML = loadMessage;
+
 			const formData = new FormData(form);
 			let body = {};
 
@@ -101,8 +131,18 @@ const sendForm = () => {
 					if (response.status !== 200) {
 						throw new Error('status network not 200');
 					}
+
+					statusMessage.innerHTML = successMessage;
+					setTimeout(() => {
+						statusMessage.remove();
+					}, 3000);
 				})
 				.catch((error) => {
+					statusMessage.innerHTML = errorMessage;
+					console.error(error);
+					setTimeout(() => {
+						statusMessage.remove();
+					}, 3000);
 					console.error(error);
 				});
 		}
