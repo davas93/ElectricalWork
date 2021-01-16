@@ -1,6 +1,8 @@
 const sendForm = () => {
 	const form = document.querySelector('form[name = "form-callback"]'),
-		input = form.querySelectorAll('input[type="text"]');
+		input = form.querySelectorAll('input[type="text"]'),
+		modalCallback = document.getElementById('callback'),
+		modalOverlay = document.querySelector('.modal-overlay');
 
 	const statusMessage = document.createElement('div');
 
@@ -135,6 +137,8 @@ const sendForm = () => {
 					statusMessage.innerHTML = successMessage;
 					setTimeout(() => {
 						statusMessage.remove();
+						modalCallback.style.display = '';
+						modalOverlay.style.display = '';
 					}, 3000);
 				})
 				.catch((error) => {
@@ -142,6 +146,8 @@ const sendForm = () => {
 					console.error(error);
 					setTimeout(() => {
 						statusMessage.remove();
+						modalCallback.style.display = '';
+						modalOverlay.style.display = '';
 					}, 3000);
 					console.error(error);
 				});
